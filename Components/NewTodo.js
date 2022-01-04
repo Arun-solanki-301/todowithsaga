@@ -21,8 +21,8 @@ const isTodoComplete = (id)=>{
             setcheck(!check)
         }    
     });
-    // UpdateTodo()
 }
+console.log(data , "rghshdghbjfioshbjk")
   return (
     <View style={styles.container}>
       {data.map((item , i)=>{

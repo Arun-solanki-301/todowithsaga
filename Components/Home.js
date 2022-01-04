@@ -16,7 +16,7 @@ import NewTodo from "./NewTodo";
 const Home = () => {
   const [AddTodoInput, setAddTodoInput] = useState("");
     useEffect(()=>{
-        dispatch(getTodoRequest(""));    
+        dispatch(getTodoRequest());    
     },[])
 
 
