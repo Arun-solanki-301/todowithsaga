@@ -18,6 +18,7 @@ const InitialState = {
 };
 
   const addTodoReducer = (state = InitialState , action) => {
+    console.log(action)
     let newData = {title : action.payload, checked : false, id : Math.random()}
     switch (action.type) {
       case actions.ADD_TODO_REQUEST:
@@ -32,7 +33,7 @@ const InitialState = {
           isLoading: false,
           isSuccess: true,
           isError: false,
-          Data: [...state.data , newData],
+          data: [...state.data, newData],
         };
       case actions.ADD_TODO_ERROR:
         return {
