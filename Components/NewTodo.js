@@ -22,7 +22,7 @@ const isTodoComplete = (id)=>{
         }    
     });
 }
-console.log(data , "rghshdghbjfioshbjk")
+console.log(data , "New todo component")
   return (
     <View style={styles.container}>
       {data.map((item , i)=>{

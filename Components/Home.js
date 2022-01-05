@@ -9,21 +9,18 @@ import {
   ActionSheetIOS,
   ScrollView,
 } from "react-native";
-import { addTodoRequest, getTodoRequest } from "../redux/Action/Action";
+import { addTodoRequest, addTodoSuccess, getTodoRequest  } from "../redux/Action/Action";
 import { useSelector, useDispatch } from "react-redux";
 import NewTodo from "./NewTodo";
 
 const Home = () => {
   const [AddTodoInput, setAddTodoInput] = useState("");
     useEffect(()=>{
-        dispatch(getTodoRequest());    
+        dispatch(getTodoRequest("sdhuk"));      
     },[])
 
 
   const {addTodoData} = useSelector((State) => State);
-  console.log(addTodoData.data , "rghshdghbjfioshbjk")
-
-
 
   const dispatch = useDispatch();
 

@@ -18,17 +18,18 @@ const InitialState = {
 };
 
   const addTodoReducer = (state = InitialState , action) => {
-    console.log(action)
-    let newData = {title : action.payload, checked : false, id : Math.random()}
+    console.log(action , "add todo reducer")
     switch (action.type) {
       case actions.ADD_TODO_REQUEST:
         return {
-          // Data : [...state],
+          ...state,
           isLoading: true,
           isSuccess: false,
           isError: false,
+          // data: [...state.data, newData],
         };
-      case actions.ADD_TODO_SUCCESS:
+        case actions.ADD_TODO_SUCCESS:
+        let newData = {title : action.payload.data, checked : false, id : Math.random()}
         return {
           isLoading: false,
           isSuccess: true,
@@ -37,9 +38,11 @@ const InitialState = {
         };
       case actions.ADD_TODO_ERROR:
         return {
+          ...state,
           isLoading: false,
           isSuccess: false,
           isError: true,
+          // data: [...state.data, newData],
         };
       default:
         return state;
